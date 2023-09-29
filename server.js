@@ -3,7 +3,7 @@ const http = require("http");
 const socketIo = require("socket.io");
 const mongoose = require("mongoose");
 const apiRoutes = require("./src/routes/api");
-const expressStaticGzip = require("express-static-gzip");
+// const expressStaticGzip = require("express-static-gzip");
 const dotenv = require("dotenv");
 dotenv.config();
 
@@ -36,12 +36,12 @@ app.use(express.json());
 
 app.use("/api", apiRoutes(Message));
 
-app.use(
-  "/static",
-  expressStaticGzip("path/to/your/static/files", {
-    enableBrotli: true,
-  })
-);
+// app.use(
+//   "/static",
+//   expressStaticGzip("path/to/your/static/files", {
+//     enableBrotli: true,
+//   })
+// );
 
 const PORT = process.env.PORT || 3000;
 
